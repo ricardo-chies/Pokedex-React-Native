@@ -2,17 +2,10 @@ import React, { useEffect, useState } from "react";
 import {FlatList, Text, StyleSheet} from 'react-native';
 
 import Pokemon from './pokemon';
-import { carregaPokemons } from "../../../servicos/carregaDados";
+import usePokemons from "../../../hooks/usePokemons";
 
 export default function Pokemons({topo: Topo}) {
-    const [titulo, setTitulo] = useState('');
-    const [lista, setLista] = useState([]);
-
-    useEffect(() =>{
-        const retorno = carregaPokemons();
-        setTitulo(retorno.titulo);
-        setLista(retorno.lista);
-    }, []);
+    const [titulo, lista] = usePokemons();
 
     const TopoLista = () => {
         return <>
