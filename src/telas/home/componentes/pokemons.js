@@ -24,7 +24,7 @@ export default function Pokemons({topo: Topo}) {
     return <FlatList 
     data={lista}
     renderItem={({item}) => <Pokemon {...item}/> }
-    // keyExtractor={(nome) => nome}
+    //keyExtractor={(nome) => nome}
     ListHeaderComponent={TopoLista}
     />
 }
