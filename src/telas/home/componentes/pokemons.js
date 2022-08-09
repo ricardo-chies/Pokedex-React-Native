@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import {FlatList, Text, StyleSheet} from 'react-native';
+
+import Pokemon from './pokemon';
 import { carregaPokemons } from "../../../servicos/carregaDados";
 
 export default function Pokemons({topo: Topo}) {
     const [titulo, setTitulo] = useState('');
-    const [lista, setLista] = useState('');
+    const [lista, setLista] = useState([]);
 
     useEffect(() =>{
         const retorno = carregaPokemons();
@@ -21,7 +23,7 @@ export default function Pokemons({topo: Topo}) {
 
     return <FlatList 
     data={lista}
-    renderItem={({item: {nome}}) => <Text>{nome}</Text> }
+    renderItem={({item}) => <Pokemon {...item}/> }
     // keyExtractor={(nome) => nome}
     ListHeaderComponent={TopoLista}
     />
