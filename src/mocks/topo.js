@@ -1,6 +1,6 @@
 const topo = {
     boasVindas: "Olá Treinador",
-    legenda: "Encontre os melhores pokémons!",
+    legenda: "Veja o poder dos seus pokémons",
 };
 
 export default topo;

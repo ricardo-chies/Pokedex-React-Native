@@ -13,7 +13,7 @@ const gerarNumeroAleatorio = (min, max) => {
 }
 
 const pokedex = {
-        titulo: "Pokémons Catalogados",
+        titulo: "Pokémons",
         lista: [
             {
               nome: "Buizel",
