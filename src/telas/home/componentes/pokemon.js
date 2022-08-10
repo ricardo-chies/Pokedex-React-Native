@@ -1,13 +1,23 @@
-import React, { useReducer, useState } from "react";
+import React, { useReducer, useMemo } from "react";
 import {Text, View, TouchableOpacity, Image, StyleSheet} from 'react-native';
 
 import Estrelas from '../../../componentes/estrelas'
+
+const quantidadePoder = (poder) => {
+    console.log(quantidadePoder)
+    return `${poder}pw`;
+}
 
 export default function Produtor({nome, imagem, poder, estrelas}) {
     const [ selecionado, inverterSelecionado ] = useReducer(
         (selecionado) => !selecionado,
         false
     );
+
+    const poderTexto = useMemo(
+        () => quantidadePoder(poder),
+        [poder]
+        );
 
     return <TouchableOpacity 
             style={estilos.cartao}
@@ -24,7 +34,7 @@ export default function Produtor({nome, imagem, poder, estrelas}) {
                 />
             </View>
             
-            <Text style={estilos.poder} >{poder}</Text>
+            <Text style={estilos.poder} >{poderTexto}</Text>
         </View>
     </TouchableOpacity>
 }
